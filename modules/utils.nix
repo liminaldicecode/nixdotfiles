@@ -1,0 +1,33 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    age
+    appimage-run
+    aria2
+    claude-code
+    codex
+    exiftool
+    fastfetch
+    flashrom
+    gcc
+    gemini-cli
+    htop
+    keyd
+    killall
+    nil
+    nixpkgs-fmt
+    nodejs
+    p7zip
+    ripgrep
+    st
+    steam-run
+    timer
+    tldr
+    tor
+    unbound
+    vis
+    xev
+    opencode
+  ];
+}

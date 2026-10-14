@@ -1,0 +1,205 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+    ./maintenance.nix
+  ];
+
+  # Bootloader
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+    useOSProber = true;
+  };
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  # Networking
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+
+  # Time
+  time.timeZone = "America/Argentina/Buenos_Aires";
+  time.hardwareClockInLocalTime = true;
+
+  # Hardware
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Desktop
+  services.xserver = {
+    enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+    videoDrivers = [ "amdgpu" ];
+  };
+
+  services.displayManager = {
+    gdm.enable = true;
+    defaultSession = "gnome";
+  };
+
+  services.desktopManager.gnome.enable = true;
+
+  services.gnome = {
+    tinysparql.enable = true;
+    core-apps.enable = true;
+    core-developer-tools.enable = true;
+    games.enable = false;
+  };
+
+  programs.gnome-terminal.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "*";
+  };
+
+  environment.variables.XCURSOR_SIZE = "32";
+
+  # Input
+  services.keyd.enable = true;
+
+  environment.etc."libinput/local-overrides.quirks".text = ''
+    [Serial Keyboards]
+    MatchUdevType=keyboard
+    MatchName=keyd virtual keyboard
+    AttrKeyboardIntegration=internal
+  '';
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
+
+  # Audio
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
+  # Virtualisation
+  virtualisation.virtualbox = {
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+    guest = {
+      enable = true;
+      dragAndDrop = true;
+    };
+  };
+  users.extraGroups.vboxusers.members = [ "nix" ];
+
+  # Users
+  users.users.nix = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+      tree
+    ];
+  };
+
+  # Nix
+  nixpkgs.config.allowUnfree = true;
+
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = [
+      "https://cache.nixos-cuda.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+    ];
+  };
+
+  # Programs
+  programs.nix-ld.enable = true;
+  programs.firefox.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
+  services.flatpak.enable = true;
+  services.qbittorrent.enable = true;
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    jost
+    liberation_ttf
+    nerd-fonts.jetbrains-mono
+    roboto
+  ];
+
+  # System Packages
+  environment.systemPackages = with pkgs; [
+    adwaita-icon-theme
+    alacritty
+    blender
+    emacs
+    git
+    gnomeExtensions.appindicator
+    gnomeExtensions.arc-menu
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnumake
+    libwacom
+    mg
+    nixfmt
+    pavucontrol
+    st
+    thunar-archive-plugin
+    thunar-volman
+    vim
+    vlc
+    webtorrent_desktop
+    wget
+    wineWow64Packages.stable
+    winetricks
+    xclip
+    yt-dlp
+  ];
+
+  # SSH
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "nix" ];
+      MaxAuthTries = 3;
+      PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
+    };
+  };
+
+  # System
+  system.stateVersion = "26.05";
+}

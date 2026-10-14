@@ -1,0 +1,37 @@
+{
+  pkgs,
+  zen-browser,
+  ...
+}:
+
+{
+  home.packages = with pkgs; [
+    calibre
+    flameshot
+    fluent-gtk-theme
+    gnome-tweaks
+    google-chrome
+    handbrake
+    kdePackages.kdeconnect-kde
+    kdePackages.okular
+    libreoffice
+    librewolf
+    lite-xl
+    mpv
+    obs-studio
+    obsidian
+    orage
+    papirus-icon-theme
+    qbittorrent
+    rofi
+    spotify
+    stremio-linux-shell
+    telegram-desktop
+    ungoogled-chromium
+    vesktop
+    vivaldi
+    vscodium-fhs
+    xarchiver
+    zen-browser
+  ];
+}
