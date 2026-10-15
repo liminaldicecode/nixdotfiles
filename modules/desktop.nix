@@ -1,6 +1,7 @@
 {
   pkgs,
   zen-browser,
+  helium,
   ...
 }:
 
@@ -33,5 +34,6 @@
     vscodium-fhs
     xarchiver
     zen-browser
+    helium
   ];
 }

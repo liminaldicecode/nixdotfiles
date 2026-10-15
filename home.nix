@@ -24,7 +24,7 @@
       gtk-single-instance = true;
       font-family = "CaskaydiaCove Nerd Font Mono";
       font-size = "16";
-      theme = "Adwaita Dark";
+      theme = "Apple System Colors";
       window-padding-x = "10";
       window-padding-y = "10";
     };
@@ -80,11 +80,19 @@
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
+  # home.pointerCursor = {
+  #   name = "Adwaita";
+  #   package = pkgs.adwaita-icon-theme;
+  #   size = 32;
+  #   gtk.enable = true;
+  # };
+
   home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
+    name = "breeze_cursors";
+    package = pkgs.kdePackages.breeze;
     size = 32;
     gtk.enable = true;
+    x11.enable = true;
   };
 
   xdg.desktopEntries = {

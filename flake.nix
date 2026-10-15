@@ -7,6 +7,10 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium = {
+      url = "github:AlvaroParker/helium-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +25,7 @@
       krita-custom,
       zen-browser,
       opencode,
+      helium,
       ...
     }@inputs:
     let
@@ -45,6 +50,7 @@
               extraSpecialArgs = {
                 krita-custom = krita-custom.legacyPackages.${system}.krita;
                 zen-browser = zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+                helium = helium.packages.${pkgs.system}.default;
               };
 
             };

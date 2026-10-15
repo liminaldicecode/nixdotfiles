@@ -29,5 +29,7 @@
     vis
     xev
     opencode
+    pfetch
+    #END
   ];
 }
