@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     krita-custom.url = "nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d";
-    hermes-agent.url = "github:NousResearch/hermes-agent";
     opencode.url = "github:GutMutCode/opencode-nix";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
@@ -21,7 +20,6 @@
       home-manager,
       krita-custom,
       zen-browser,
-      hermes-agent,
       opencode,
       ...
     }@inputs:
@@ -34,7 +32,6 @@
         inherit system;
         modules = [
           ./configuration.nix
-          hermes-agent.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             nixpkgs.overlays = [ opencode.overlays.default ];

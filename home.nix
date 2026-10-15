@@ -22,7 +22,7 @@
     enableBashIntegration = true;
     settings = {
       gtk-single-instance = true;
-      font-family = "JetBrainsMono NF Regular";
+      font-family = "CaskaydiaCove Nerd Font Mono";
       font-size = "16";
       theme = "Adwaita Dark";
       window-padding-x = "10";

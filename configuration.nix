@@ -45,26 +45,31 @@
   };
 
   services.displayManager = {
-    gdm.enable = true;
-    defaultSession = "gnome";
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    # gdm.enable = true;
+    # defaultSession = "gnome";
   };
 
-  services.desktopManager.gnome.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
-  services.gnome = {
-    tinysparql.enable = true;
-    core-apps.enable = true;
-    core-developer-tools.enable = true;
-    games.enable = false;
-  };
+  # services.gnome = {
+  #   tinysparql.enable = true;
+  #   core-apps.enable = true;
+  #   core-developer-tools.enable = true;
+  #   games.enable = false;
+  # };
 
-  programs.gnome-terminal.enable = true;
+  # programs.gnome-terminal.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-    config.common.default = "*";
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  #   config.common.default = "*";
+  # };
 
   environment.variables.XCURSOR_SIZE = "32";
 
@@ -133,6 +138,7 @@
   };
 
   # Programs
+  programs.kdeconnect.enable = true;
   programs.nix-ld.enable = true;
   programs.firefox.enable = true;
   programs.appimage = {
@@ -156,20 +162,23 @@
     liberation_ttf
     nerd-fonts.jetbrains-mono
     noto-fonts-cjk-sans
+    nerd-fonts.caskaydia-cove
+    iosevka
+    iosevka-comfy.comfy
     roboto
   ];
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    adwaita-icon-theme
+    # adwaita-icon-theme
     alacritty
     blender
     emacs
     git
-    gnomeExtensions.appindicator
-    gnomeExtensions.arc-menu
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
+    # gnomeExtensions.appindicator
+    # gnomeExtensions.arc-menu
+    # gnomeExtensions.blur-my-shell
+    # gnomeExtensions.just-perfection
     gnumake
     libwacom
     mg
@@ -186,6 +195,7 @@
     winetricks
     xclip
     yt-dlp
+    nh
   ];
 
   # SSH
