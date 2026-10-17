@@ -59,7 +59,7 @@
                   zenPkgs.zen-browser.override {
                     zen-browser-unwrapped = unwrapped;
                   };
-                helium = helium.packages.${pkgs.system}.default;
+                helium = helium.packages.${pkgs.stdenv.hostPlatform.system}.default;
               };
 
             };

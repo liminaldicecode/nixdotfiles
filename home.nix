@@ -76,7 +76,7 @@
       code = "codium";
       em = "emacs -nw";
       cls = "clear";
-      nix-maintain = "~/bin/nix-maintain"
+      nix-maintain = "~/bin/nix-maintain";
     };
   };
 
