@@ -53,6 +53,10 @@
       epkgs.goto-chg
       epkgs.evil-collection
       epkgs.vertico
+      epkgs.markdown-mode
+      epkgs.gdscript-mode
+      epkgs.evil-numbers
+      epkgs.prettier
     ];
     extraConfig = ''
       (ido-mode t)
@@ -72,6 +76,7 @@
       code = "codium";
       em = "emacs -nw";
       cls = "clear";
+      nix-maintain = "~/bin/nix-maintain"
     };
   };
 

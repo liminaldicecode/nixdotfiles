@@ -30,6 +30,8 @@
     xev
     opencode
     pfetch
+    btop
+    unrar
     #END
   ];
 }

@@ -49,7 +49,16 @@
 
               extraSpecialArgs = {
                 krita-custom = krita-custom.legacyPackages.${system}.krita;
-                zen-browser = zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+                zen-browser =
+                  let
+                    zenPkgs = zen-browser.packages.${pkgs.stdenv.hostPlatform.system};
+                    unwrapped = zenPkgs.zen-browser-unwrapped.override {
+                      hash = "sha256-uyBF0+IWVNQP6EElAJLurf0sH8gx7vtQkiJ3PIvcoUk=";
+                    };
+                  in
+                  zenPkgs.zen-browser.override {
+                    zen-browser-unwrapped = unwrapped;
+                  };
                 helium = helium.packages.${pkgs.system}.default;
               };
 

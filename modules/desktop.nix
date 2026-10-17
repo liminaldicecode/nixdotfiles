@@ -7,14 +7,22 @@
 
 {
   home.packages = with pkgs; [
+    #KDE
+    kdePackages.kdeconnect-kde
+    kdePackages.okular
+    kdePackages.kcalc
+    kdePackages.kcharselect
+    kdePackages.kclock    
+    kdePackages.kcolorchooser
+    kdePackages.kolourpaint  
+    kdePackages.merkuro
+    ###
     calibre
     flameshot
     fluent-gtk-theme
     gnome-tweaks
     google-chrome
     handbrake
-    kdePackages.kdeconnect-kde
-    kdePackages.okular
     libreoffice
     librewolf
     lite-xl
@@ -35,5 +43,7 @@
     xarchiver
     zen-browser
     helium
+    xournalpp
+    #END
   ];
 }
