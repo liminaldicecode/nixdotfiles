@@ -12,11 +12,12 @@
     kdePackages.okular
     kdePackages.kcalc
     kdePackages.kcharselect
-    kdePackages.kclock    
+    kdePackages.kclock
     kdePackages.kcolorchooser
-    kdePackages.kolourpaint  
+    kdePackages.kolourpaint
     kdePackages.merkuro
     kdePackages.kdevelop
+    xdg-desktop-portal-gtk
     ###
     calibre
     flameshot

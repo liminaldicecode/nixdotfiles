@@ -111,11 +111,11 @@
     };
     codium = {
       name = "VSCodium";
-      exec = "codium %F"
+      exec = "codium %F";
       genericName = "Code Editor";
       comment = "Code Editing. Redefined.";
       terminal = false;
-      icon = "/home/nix/.applications/VSCodium_new_dark_900x900.svg"
+      icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
     };
   };
 
