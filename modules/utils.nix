@@ -32,6 +32,7 @@
     pfetch
     btop
     unrar
+    manim
     #END
   ];
 }
