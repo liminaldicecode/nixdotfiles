@@ -16,6 +16,7 @@
     kdePackages.kcolorchooser
     kdePackages.kolourpaint  
     kdePackages.merkuro
+    kdePackages.kdevelop
     ###
     calibre
     flameshot

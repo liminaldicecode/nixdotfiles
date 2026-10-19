@@ -24,7 +24,7 @@
       gtk-single-instance = true;
       font-family = "CaskaydiaCove Nerd Font Mono";
       font-size = "16";
-      theme = "Apple System Colors";
+      theme = "Dark Modern";
       window-padding-x = "10";
       window-padding-y = "10";
     };
