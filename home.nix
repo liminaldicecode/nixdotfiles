@@ -105,8 +105,17 @@
       name = "Obsidian";
       exec = "obsidian %u";
       genericName = "Note Taking";
+      comment = "The free and flexible app for your private thoughts.";
       terminal = false;
       icon = "/home/nix/.applications/Obsidian.svg";
+    };
+    codium = {
+      name = "VSCodium";
+      exec = "codium %F"
+      genericName = "Code Editor";
+      comment = "Code Editing. Redefined.";
+      terminal = false;
+      icon = "/home/nix/.applications/VSCodium_new_dark_900x900.svg"
     };
   };
 

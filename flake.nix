@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     krita-custom.url = "nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d";
     opencode.url = "github:GutMutCode/opencode-nix";
-    apple-fonts.url= "github:Lyndeno/apple-fonts.nix";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +26,6 @@
       zen-browser,
       opencode,
       helium,
-      apple-fonts,
       ...
     }@inputs:
     let

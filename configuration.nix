@@ -100,17 +100,17 @@
   };
 
   # Virtualisation
-  virtualisation.virtualbox = {
-    host = {
-      enable = true;
-      enableExtensionPack = true;
-    };
-    guest = {
-      enable = true;
-      dragAndDrop = true;
-    };
-  };
-  users.extraGroups.vboxusers.members = [ "nix" ];
+  # virtualisation.virtualbox = {
+  #   host = {
+  #     enable = true;
+  #     enableExtensionPack = true;
+  #   };
+  #   guest = {
+  #     enable = true;
+  #     dragAndDrop = true;
+  #   };
+  # };
+  # users.extraGroups.vboxusers.members = [ "nix" ];
 
   # Users
   users.users.nix = {
