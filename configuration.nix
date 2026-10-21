@@ -191,6 +191,7 @@
     xclip
     yt-dlp
     nh
+    (llama-cpp.override { vulkanSupport = true; })
   ];
 
   # SSH
