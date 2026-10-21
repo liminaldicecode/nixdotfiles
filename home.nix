@@ -56,7 +56,7 @@
       epkgs.markdown-mode
       epkgs.gdscript-mode
       epkgs.evil-numbers
-      epkgs.prettier
+      epkgs.lsp-mode
     ];
     extraConfig = ''
       (ido-mode t)
