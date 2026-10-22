@@ -33,6 +33,9 @@
     btop
     unrar
     manim
-    #END
+    scrcpy
+    adbtuifm
+    gdtoolkit_4
+    # END
   ];
 }

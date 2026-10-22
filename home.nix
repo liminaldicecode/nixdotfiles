@@ -39,24 +39,31 @@
 
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs: [
-      epkgs.company
-      epkgs.vterm
-      epkgs.multiple-cursors
-      epkgs.nix-mode
-      epkgs.doom-themes
-      epkgs.xclip
-      epkgs.evil
-      epkgs.spaceline
-      epkgs.evil-commentary
-      epkgs.undo-fu
-      epkgs.goto-chg
-      epkgs.evil-collection
-      epkgs.vertico
-      epkgs.markdown-mode
-      epkgs.gdscript-mode
-      epkgs.evil-numbers
-      epkgs.lsp-mode
+    extraPackages = epkgs: with epkgs; [
+      company
+      vterm
+      multiple-cursors
+      nix-mode
+      doom-themes
+      xclip
+      evil
+      spaceline
+      evil-commentary
+      undo-fu
+      goto-chg
+      evil-collection
+      vertico
+      markdown-mode
+      gdscript-mode
+      evil-numbers
+      lsp-mode
+      hydra
+      lsp-ui
+      flycheck
+      (treesit-grammars.with-grammars (grammars: with grammars; [
+        tree-sitter-gdscript
+      ]))
+      # EMACS
     ];
     extraConfig = ''
       (ido-mode t)
@@ -109,6 +116,9 @@
       comment = "The free and flexible app for your private thoughts.";
       terminal = false;
       icon = "/home/nix/.applications/Obsidian.svg";
+      settings = {
+        StartupWMClass = "obsidian";
+      };
     };
     codium = {
       name = "VSCodium";

@@ -26,6 +26,16 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    user = "nix";
+    group = "users";
+    dataDir = "/home/nix/.local/state/syncthing";
+    configDir = "/home/nix/.config/syncthing";
+  };
+
   # Time
   time.timeZone = "America/Argentina/Buenos_Aires";
   time.hardwareClockInLocalTime = true;
