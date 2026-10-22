@@ -30,12 +30,6 @@
     };
   };
 
-  programs.vim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [
-      vim-airline
-    ];
-  };
 
   programs.emacs = {
     enable = true;

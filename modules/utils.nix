@@ -5,13 +5,11 @@
     age
     appimage-run
     aria2
-    claude-code
     codex
     exiftool
     fastfetch
     flashrom
     gcc
-    gemini-cli
     htop
     keyd
     killall

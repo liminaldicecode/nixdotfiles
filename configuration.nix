@@ -150,6 +150,42 @@
     binfmt = true;
   };
 
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+    package = (pkgs.vim-full.override { }).customize{
+      name = "vim";
+      # Install plugins for example for syntax highlighting of nix files
+      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+        start = [ vim-nix vim-lastplace vim-airline ];
+        opt = [];
+      };
+      vimrcConfig.customRC = ''
+        let g:mapleader = " "
+        nnoremap <leader>e :Ex<CR>
+        nnoremap <leader>h :set hlsearch!<CR>
+        set nocompatible
+        set backspace=indent,eol,start
+        syntax on
+        colorscheme habamax
+        set noshowmode
+        set number
+        set relativenumber
+        set undofile
+        set ignorecase
+        set nosmartcase
+        set hlsearch
+        set scrolloff=8
+        set termguicolors
+        set confirm
+        set tabstop=2
+        set shiftwidth=2
+        set smarttab
+        set autoindent
+        set smartindent
+      '';
+    };
+  };
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -192,7 +228,6 @@
     st
     thunar-archive-plugin
     thunar-volman
-    vim
     vlc
     webtorrent_desktop
     wget
