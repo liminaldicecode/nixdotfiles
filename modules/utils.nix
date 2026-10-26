@@ -34,6 +34,8 @@
     scrcpy
     adbtuifm
     gdtoolkit_4
+    librespot
+    lua
     # END
   ];
 }

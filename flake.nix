@@ -53,7 +53,7 @@
                   let
                     zenPkgs = zen-browser.packages.${pkgs.stdenv.hostPlatform.system};
                     unwrapped = zenPkgs.zen-browser-unwrapped.override {
-                      hash = "sha256-uyBF0+IWVNQP6EElAJLurf0sH8gx7vtQkiJ3PIvcoUk=";
+                      hash = "sha256-uoHdcK9w1kXy8KaS9/pFEPgZKQq/2NjmAnPT1aYNBTY=";
                     };
                   in
                   zenPkgs.zen-browser.override {

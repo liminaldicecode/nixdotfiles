@@ -35,7 +35,6 @@
     papirus-icon-theme
     qbittorrent
     rofi
-    spotify
     stremio-linux-shell
     telegram-desktop
     ungoogled-chromium
@@ -46,6 +45,9 @@
     zen-browser
     helium
     xournalpp
+    kodi
+    trackma-gtk
+    spotify-qt
     #END
   ];
 }

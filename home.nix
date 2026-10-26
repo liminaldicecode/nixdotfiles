@@ -30,35 +30,37 @@
     };
   };
 
-
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs: with epkgs; [
-      company
-      vterm
-      multiple-cursors
-      nix-mode
-      doom-themes
-      xclip
-      evil
-      spaceline
-      evil-commentary
-      undo-fu
-      goto-chg
-      evil-collection
-      vertico
-      markdown-mode
-      gdscript-mode
-      evil-numbers
-      lsp-mode
-      hydra
-      lsp-ui
-      flycheck
-      (treesit-grammars.with-grammars (grammars: with grammars; [
-        tree-sitter-gdscript
-      ]))
-      # EMACS
-    ];
+    extraPackages =
+      epkgs: with epkgs; [
+        company
+        vterm
+        multiple-cursors
+        nix-mode
+        doom-themes
+        xclip
+        evil
+        spaceline
+        evil-commentary
+        undo-fu
+        goto-chg
+        evil-collection
+        vertico
+        markdown-mode
+        gdscript-mode
+        evil-numbers
+        lsp-mode
+        hydra
+        lsp-ui
+        flycheck
+        (treesit-grammars.with-grammars (
+          grammars: with grammars; [
+            tree-sitter-gdscript
+          ]
+        ))
+        # EMACS
+      ];
     extraConfig = ''
       (ido-mode t)
       (add-hook 'after-init-hook 'global-company-mode)
@@ -71,7 +73,12 @@
 
   programs.bash = {
     enable = true;
-    initExtra = ''bind "set completion-ignore-case on"'';
+    initExtra = ''
+      bind "set completion-ignore-case on"
+      			get() {
+      				yt-dlp -t mp3 "$1"
+      			}
+      		'';
     shellAliases = {
       v = "vim";
       code = "codium";
@@ -114,6 +121,7 @@
         StartupWMClass = "obsidian";
       };
     };
+
     codium = {
       name = "VSCodium";
       exec = "codium %F";
@@ -122,6 +130,19 @@
       terminal = false;
       icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
     };
+
+    trackma-gtk = {
+      name = "Trackma (GTK)";
+      exec = "trackma-gtk %u";
+      genericName = "Anime/Manga Tracker";
+      comment = "Open source list manager for AniList and other trackers";
+      terminal = false;
+      icon = "/home/nix/.applications/trackma.svg";
+      settings = {
+        StartupWMClass = "trackma-gtk";
+      };
+    };
+
   };
 
   programs.vicinae = {
