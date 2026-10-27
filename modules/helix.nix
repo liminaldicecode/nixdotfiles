@@ -3,13 +3,14 @@
 {
   programs.helix = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
     extraPackages = with pkgs; [
       nixd
       nixfmt
       netcat-gnu
     ];
     settings = {
+      theme = "ayu_dark";
       editor = {
         line-number = "relative";
         cursor-shape = {
