@@ -36,6 +36,7 @@
     gdtoolkit_4
     librespot
     lua
+    netcat
     # END
   ];
 }

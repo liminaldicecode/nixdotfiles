@@ -48,6 +48,7 @@
     kodi
     trackma-gtk
     spotify-qt
+		thunderbird
     #END
   ];
 }

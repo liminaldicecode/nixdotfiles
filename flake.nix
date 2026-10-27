@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     krita-custom.url = "nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d";
     opencode.url = "github:GutMutCode/opencode-nix";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
       zen-browser,
       opencode,
       helium,
+      neovim-nightly-overlay,
       ...
     }@inputs:
     let
@@ -49,6 +51,8 @@
 
               extraSpecialArgs = {
                 krita-custom = krita-custom.legacyPackages.${system}.krita;
+                neovim-nightly-overlay =
+                  inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
                 zen-browser =
                   let
                     zenPkgs = zen-browser.packages.${pkgs.stdenv.hostPlatform.system};

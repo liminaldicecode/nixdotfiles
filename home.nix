@@ -13,6 +13,8 @@
     ./modules/desktop.nix
     ./modules/design.nix
     ./modules/utils.nix
+    ./modules/nvim.nix
+    ./modules/helix.nix
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
 
@@ -77,10 +79,14 @@
       bind "set completion-ignore-case on"
       			get() {
       				yt-dlp -t mp3 "$1"
+                        }
+
+      			getvid() {
+      				yt-dlp -t mp4 "$1"
       			}
       		'';
     shellAliases = {
-      v = "vim";
+      v = "nvim";
       code = "codium";
       em = "emacs -nw";
       cls = "clear";
