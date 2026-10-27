@@ -19,12 +19,19 @@
     '';
 
     initLua = ''
+      vim.loader.enable()
+      vim.g.mapleader = ' '
+      vim.g.maplocalleader = ' '
+
+      vim.g.have_nerd_font = true
+
       vim.lsp.config('gdscript', {})
       vim.lsp.enable('gdscript')
       vim.o.complete = ".,w,b,o"
       vim.o.completeopt = "menuone,noselect,fuzzy"
       vim.o.autocomplete = true
       vim.o.autocompletedelay = 250
+      vim.opt.ignorecase = true
 
       vim.g.airline_theme = 'deus'
 
@@ -42,7 +49,16 @@
       },
       })
 
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
       require("neomodern").load()
+
+      require("markdown").setup()
+      vim.keymap.set('n', '<leader>mm', ':MDListItemBelow<CR>', { desc = 'Add list item below' })
 
       vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("user_lsp_completion", { clear = true }),
@@ -57,6 +73,8 @@
     '';
 
     plugins = with pkgs.vimPlugins; [
+      markdown-nvim
+      telescope-nvim
       vim-airline
       vim-airline-themes
       nvim-lspconfig
