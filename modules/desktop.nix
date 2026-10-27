@@ -18,6 +18,7 @@
     kdePackages.merkuro
     kdePackages.kdevelop
     xdg-desktop-portal-gtk
+    klassy
     ###
     calibre
     flameshot
