@@ -10,17 +10,11 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    extraConfig = ''
-      set number
-      set relativenumber
-      set expandtab
-      set shiftwidth=2
-      set tabstop=2
-    '';
 
     initLua = ''${builtins.readFile ./init.lua}'';
 
     plugins = with pkgs.vimPlugins; [
+      conform-nvim
       markdown-nvim
       telescope-nvim
       vim-airline

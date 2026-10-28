@@ -37,6 +37,7 @@
     librespot
     lua
     netcat
+    spotdl
     # END
   ];
 }
