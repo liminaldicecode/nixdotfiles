@@ -9,18 +9,8 @@
       nixd
       nixfmt
       netcat-gnu
+      prettier
     ];
-    settings = {
-      theme = "default";
-      editor = {
-        line-number = "relative";
-        cursor-shape = {
-          normal = "block";
-          insert = "bar";
-          select = "underline";
-        };
-      };
-    };
     languages = {
       language-server = {
         godot = {
@@ -44,6 +34,13 @@
           name = "gdscript";
           language-servers = [ "godot" ];
           auto-format = false;
+        }
+        {
+          name = "rust";
+          indent = {
+            tab-width = 4;
+            unit = " ";
+          };
         }
         {
           name = "nix";

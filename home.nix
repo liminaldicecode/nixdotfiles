@@ -24,18 +24,23 @@
     enableBashIntegration = true;
     settings = {
       gtk-single-instance = true;
-      font-family = "CaskaydiaCove Nerd Font Mono";
-      font-size = "16";
+      font-family = "CaskaydiaCove NF";
+      font-size = "16.5";
       theme = "Dark Modern";
-      window-padding-x = "10";
-      window-padding-y = "10";
+      window-padding-x = "5";
+      window-padding-y = "5";
     };
+  };
+
+  programs.tmux = {
+    enable = true;
   };
 
   programs.emacs = {
     enable = true;
     extraPackages =
       epkgs: with epkgs; [
+        smooth-scroll
         zen-mode
         company
         vterm

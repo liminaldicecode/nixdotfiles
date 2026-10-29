@@ -1,8 +1,21 @@
+theme = "default"
+
+[editor]
+line-number = "relative"
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+C-p = ["move_line_up",   "scroll_up"]
+C-n = ["move_line_down", "scroll_down"]
+
 [keys.insert]
 "C-[" = "normal_mode"
 
 [keys.select]
 "C-[" = "normal_mode"
 
-[keys.space]
-"C-[" = "normal_mode"

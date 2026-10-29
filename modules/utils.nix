@@ -39,6 +39,9 @@
     netcat
     spotdl
     marksman
+    cargo
+    rust-analyzer
+    wezterm
     # END
   ];
 }
