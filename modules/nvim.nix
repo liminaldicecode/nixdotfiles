@@ -9,11 +9,12 @@
 
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
 
-    initLua = ''${builtins.readFile ./init.lua}'';
+    initLua = "${builtins.readFile ./init.lua}";
 
     plugins = with pkgs.vimPlugins; [
+      zen-mode-nvim
       conform-nvim
       markdown-nvim
       telescope-nvim

@@ -36,6 +36,7 @@
     enable = true;
     extraPackages =
       epkgs: with epkgs; [
+        zen-mode
         company
         vterm
         multiple-cursors

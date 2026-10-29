@@ -3,14 +3,15 @@
 {
   programs.helix = {
     enable = true;
-    defaultEditor = false;
+    defaultEditor = true;
+    extraConfig = "${builtins.readFile ./config.toml}";
     extraPackages = with pkgs; [
       nixd
       nixfmt
       netcat-gnu
     ];
     settings = {
-      theme = "ayu_dark";
+      theme = "default";
       editor = {
         line-number = "relative";
         cursor-shape = {
@@ -18,12 +19,6 @@
           insert = "bar";
           select = "underline";
         };
-      };
-      keys.insert = {
-        "C-[" = "normal_mode";
-      };
-      keys.select = {
-        "C-[" = "normal_mode";
       };
     };
     languages = {
@@ -56,6 +51,20 @@
           auto-format = true;
           formatter = {
             command = "nixfmt";
+          };
+        }
+        {
+          name = "markdown";
+          language-servers = [ "marksman" ];
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "markdown"
+              "--prose-wrap"
+              "never"
+            ];
+            auto-format = true;
           };
         }
       ];

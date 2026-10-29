@@ -20,5 +20,6 @@
     lorien
     pencil2d
     pinta
+    # END
   ];
 }

@@ -1,0 +1,8 @@
+[keys.insert]
+"C-[" = "normal_mode"
+
+[keys.select]
+"C-[" = "normal_mode"
+
+[keys.space]
+"C-[" = "normal_mode"

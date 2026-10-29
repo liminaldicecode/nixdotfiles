@@ -38,6 +38,7 @@
     lua
     netcat
     spotdl
+    marksman
     # END
   ];
 }

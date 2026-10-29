@@ -104,13 +104,13 @@
   };
 
   # Audio
-	security.rtkit.enable = true;
-	services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		wireplumber.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    wireplumber.enable = true;
     pulse.enable = true;
   };
 
@@ -158,12 +158,16 @@
   programs.vim = {
     enable = true;
     defaultEditor = true;
-    package = (pkgs.vim-full.override { }).customize{
+    package = (pkgs.vim-full.override { }).customize {
       name = "vim";
       # Install plugins for example for syntax highlighting of nix files
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-        start = [ vim-nix vim-lastplace vim-airline ];
-        opt = [];
+        start = [
+          vim-nix
+          vim-lastplace
+          vim-airline
+        ];
+        opt = [ ];
       };
       vimrcConfig.customRC = ''
         let g:mapleader = " "
@@ -211,7 +215,10 @@
     iosevka
     iosevka-comfy.comfy
     roboto
+    hermit
   ];
+
+  fonts.fontDir.enable = true;
 
   # System Packages
   environment.systemPackages = with pkgs; [

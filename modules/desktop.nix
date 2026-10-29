@@ -49,7 +49,8 @@
     kodi
     trackma-gtk
     spotify-qt
-		thunderbird
+    thunderbird
+    kakoune
     #END
   ];
 }
