@@ -5,7 +5,7 @@
     enable = true;
     extraPackages =
       epkgs: with epkgs; [
-        helix-mode
+        helix
         zen-mode
         company
         vterm
