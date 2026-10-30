@@ -30,7 +30,6 @@
     pfetch
     btop
     unrar
-    manim
     scrcpy
     adbtuifm
     gdtoolkit_4
