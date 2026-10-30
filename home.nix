@@ -13,8 +13,10 @@
     ./modules/desktop.nix
     ./modules/design.nix
     ./modules/utils.nix
-    ./modules/nvim.nix
+    ./modules/emacs.nix
     ./modules/helix.nix
+    ./modules/nvim.nix
+
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
 
@@ -34,47 +36,6 @@
 
   programs.tmux = {
     enable = true;
-  };
-
-  programs.emacs = {
-    enable = true;
-    extraPackages =
-      epkgs: with epkgs; [
-        smooth-scroll
-        zen-mode
-        company
-        vterm
-        multiple-cursors
-        nix-mode
-        doom-themes
-        xclip
-        evil
-        spaceline
-        evil-commentary
-        undo-fu
-        goto-chg
-        evil-collection
-        vertico
-        markdown-mode
-        gdscript-mode
-        evil-numbers
-        lsp-mode
-        hydra
-        lsp-ui
-        flycheck
-        (treesit-grammars.with-grammars (
-          grammars: with grammars; [
-            tree-sitter-gdscript
-          ]
-        ))
-        # EMACS
-      ];
-    extraConfig = ''
-      (ido-mode t)
-      (add-hook 'after-init-hook 'global-company-mode)
-      (menu-bar-mode 0)
-      (electric-pair-mode t)
-    '';
   };
 
   xfconf.enable = false;

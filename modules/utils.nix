@@ -42,6 +42,7 @@
     rust-analyzer
     wezterm
     imagemagick
+    disfetch
     # END
   ];
 }
