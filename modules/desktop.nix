@@ -48,11 +48,10 @@
     xournalpp
     kodi
     trackma-gtk
-    spotify-qt
     thunderbird
     kakoune
-    gram
     epiphany
+    qtcreator
     #END
   ];
 }

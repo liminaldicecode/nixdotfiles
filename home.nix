@@ -6,6 +6,7 @@
 }:
 
 {
+
   home.username = "nix";
   home.homeDirectory = "/home/nix";
 
@@ -16,7 +17,7 @@
     ./modules/emacs.nix
     ./modules/helix.nix
     ./modules/nvim.nix
-
+    ./modules/gram.nix
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
 
