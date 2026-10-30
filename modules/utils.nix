@@ -42,6 +42,7 @@
     cargo
     rust-analyzer
     wezterm
+    imagemagick
     # END
   ];
 }

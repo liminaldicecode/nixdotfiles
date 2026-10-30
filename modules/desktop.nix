@@ -51,6 +51,8 @@
     spotify-qt
     thunderbird
     kakoune
+    gram
+    epiphany
     #END
   ];
 }
