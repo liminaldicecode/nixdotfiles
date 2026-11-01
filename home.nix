@@ -53,24 +53,27 @@
     x11.enable = true;
   };
 
-  codium = {
-    name = "VSCodium";
-    exec = "codium %F";
-    genericName = "Code Editor";
-    comment = "Code Editing. Redefined.";
-    terminal = false;
-    icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
-  };
+  xdg.desktopEntries = {
 
-  trackma-gtk = {
-    name = "Trackma (GTK)";
-    exec = "trackma-gtk %u";
-    genericName = "Anime/Manga Tracker";
-    comment = "Open source list manager for AniList and other trackers";
-    terminal = false;
-    icon = "/home/nix/.applications/trackma.svg";
-    settings = {
-      StartupWMClass = "trackma-gtk";
+    codium = {
+      name = "VSCodium";
+      exec = "codium %F";
+      genericName = "Code Editor";
+      comment = "Code Editing. Redefined.";
+      terminal = false;
+      icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
+    };
+
+    trackma-gtk = {
+      name = "Trackma (GTK)";
+      exec = "trackma-gtk %u";
+      genericName = "Anime/Manga Tracker";
+      comment = "Open source list manager for AniList and other trackers";
+      terminal = false;
+      icon = "/home/nix/.applications/trackma.svg";
+      settings = {
+        StartupWMClass = "trackma-gtk";
+      };
     };
   };
 
