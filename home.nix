@@ -15,28 +15,8 @@
     ./modules/design.nix
     ./modules/utils.nix
     ./modules/helix.nix
-    # ./modules/emacs.nix
-    # ./modules/nvim.nix
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
-
-  programs.ghostty = {
-    enable = false;
-    systemd.enable = true;
-    enableBashIntegration = true;
-    settings = {
-      gtk-single-instance = true;
-      font-family = "CaskaydiaCove NF";
-      font-size = "16.5";
-      theme = "Dark Modern";
-      window-padding-x = "5";
-      window-padding-y = "5";
-    };
-  };
-
-  programs.tmux = {
-    enable = false;
-  };
 
   xfconf.enable = false;
 
@@ -53,9 +33,7 @@
       			}
       		'';
     shellAliases = {
-      v = "nvim";
       code = "codium";
-      em = "emacs -nw";
       cls = "clear";
       nix-maintain = "~/bin/nix-maintain";
       llm = "GGML_VK_VISIBLE_DEVICES=0 llama-server -m $HOME/models/gemma-4-E4B-it-Q4_K_M.gguf --device Vulkan0 --port 8081 -c 2048 -np 1 -ngl 99";
@@ -67,13 +45,6 @@
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
-  # home.pointerCursor = {
-  #   name = "Adwaita";
-  #   package = pkgs.adwaita-icon-theme;
-  #   size = 32;
-  #   gtk.enable = true;
-  # };
-
   home.pointerCursor = {
     name = "breeze_cursors";
     package = pkgs.kdePackages.breeze;
@@ -82,40 +53,25 @@
     x11.enable = true;
   };
 
-  xdg.desktopEntries = {
-    obsidian = {
-      name = "Obsidian";
-      exec = "obsidian %u";
-      genericName = "Note Taking";
-      comment = "The free and flexible app for your private thoughts.";
-      terminal = false;
-      icon = "/home/nix/.applications/Obsidian.svg";
-      settings = {
-        StartupWMClass = "obsidian";
-      };
-    };
+  codium = {
+    name = "VSCodium";
+    exec = "codium %F";
+    genericName = "Code Editor";
+    comment = "Code Editing. Redefined.";
+    terminal = false;
+    icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
+  };
 
-    codium = {
-      name = "VSCodium";
-      exec = "codium %F";
-      genericName = "Code Editor";
-      comment = "Code Editing. Redefined.";
-      terminal = false;
-      icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
+  trackma-gtk = {
+    name = "Trackma (GTK)";
+    exec = "trackma-gtk %u";
+    genericName = "Anime/Manga Tracker";
+    comment = "Open source list manager for AniList and other trackers";
+    terminal = false;
+    icon = "/home/nix/.applications/trackma.svg";
+    settings = {
+      StartupWMClass = "trackma-gtk";
     };
-
-    trackma-gtk = {
-      name = "Trackma (GTK)";
-      exec = "trackma-gtk %u";
-      genericName = "Anime/Manga Tracker";
-      comment = "Open source list manager for AniList and other trackers";
-      terminal = false;
-      icon = "/home/nix/.applications/trackma.svg";
-      settings = {
-        StartupWMClass = "trackma-gtk";
-      };
-    };
-
   };
 
   programs.vicinae = {

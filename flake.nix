@@ -2,12 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     krita-custom.url = "nixpkgs/6368eda62c9775c38ef7f714b2555a741c20c72d";
-    opencode.url = "github:GutMutCode/opencode-nix";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     helium = {
       url = "github:AlvaroParker/helium-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,10 +18,7 @@
       nixpkgs,
       home-manager,
       krita-custom,
-      zen-browser,
-      opencode,
       helium,
-      neovim-nightly-overlay,
       ...
     }@inputs:
     let
@@ -41,7 +32,6 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            nixpkgs.overlays = [ opencode.overlays.default ];
 
             home-manager = {
               useGlobalPkgs = true;
@@ -51,18 +41,6 @@
 
               extraSpecialArgs = {
                 krita-custom = krita-custom.legacyPackages.${system}.krita;
-                neovim-nightly-overlay =
-                  inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
-                zen-browser =
-                  let
-                    zenPkgs = zen-browser.packages.${pkgs.stdenv.hostPlatform.system};
-                    unwrapped = zenPkgs.zen-browser-unwrapped.override {
-                      hash = "sha256-Mj8mguc+OCR6UfvMdeVijtK7m0BNsAz5zxavMpqRb64=";
-                    };
-                  in
-                  zenPkgs.zen-browser.override {
-                    zen-browser-unwrapped = unwrapped;
-                  };
                 helium = helium.packages.${pkgs.stdenv.hostPlatform.system}.default;
               };
 

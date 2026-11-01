@@ -21,21 +21,16 @@
     klassy
     ###
     calibre
-    # flameshot
     fluent-gtk-theme
-    # gnome-tweaks
     google-chrome
     handbrake
     libreoffice
     librewolf
-    # lite-xl
     mpv
     obs-studio
     obsidian
-    # orage
     papirus-icon-theme
     qbittorrent
-    # rofi
     stremio-linux-shell
     telegram-desktop
     ungoogled-chromium
@@ -43,17 +38,9 @@
     vivaldi
     vscodium-fhs
     xarchiver
-    # zen-browser
     helium
-    # xournalpp
-    # kodi
     trackma-gtk
     thunderbird
-    # kakoune
-    # epiphany
-    # focuswriter
-    # gram
-    # qtcreator
     #END
   ];
 }
