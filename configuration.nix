@@ -156,8 +156,8 @@
   };
 
   programs.vim = {
-    enable = true;
-    defaultEditor = true;
+    enable = false;
+    defaultEditor = false;
     package = (pkgs.vim-full.override { }).customize {
       name = "vim";
       # Install plugins for example for syntax highlighting of nix files
@@ -216,6 +216,7 @@
     iosevka-comfy.comfy
     roboto
     hermit
+    plemoljp
   ];
 
   fonts.fontDir.enable = true;

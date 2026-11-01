@@ -6,6 +6,7 @@
     defaultEditor = true;
     extraConfig = "${builtins.readFile ./config.toml}";
     extraPackages = with pkgs; [
+      gopls
       nixd
       nixfmt
       netcat-gnu
@@ -13,6 +14,16 @@
     ];
     languages = {
       language-server = {
+        gopls = {
+          command = "gopls";
+          args = [
+            "-logfile=/tmp/gopls.log"
+            "serve"
+          ];
+          config = {
+            "ui.diagnostic.staticcheck" = true;
+          };
+        };
         godot = {
           command = "nc";
           args = [

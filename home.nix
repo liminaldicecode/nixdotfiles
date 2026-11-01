@@ -14,15 +14,14 @@
     ./modules/desktop.nix
     ./modules/design.nix
     ./modules/utils.nix
-    ./modules/emacs.nix
     ./modules/helix.nix
-    ./modules/nvim.nix
-    ./modules/gram.nix
+    # ./modules/emacs.nix
+    # ./modules/nvim.nix
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
 
   programs.ghostty = {
-    enable = true;
+    enable = false;
     systemd.enable = true;
     enableBashIntegration = true;
     settings = {
@@ -36,7 +35,7 @@
   };
 
   programs.tmux = {
-    enable = true;
+    enable = false;
   };
 
   xfconf.enable = false;

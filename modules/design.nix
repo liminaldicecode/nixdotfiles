@@ -7,8 +7,8 @@
 {
   home.packages = with pkgs; [
     aseprite
-    calligraphy
-    drawpile
+    # calligraphy
+    # drawpile
     freecad
     gimp
     godotPackages_4_7.godot
@@ -17,9 +17,10 @@
     kdePackages.kdenlive
     krita-custom
     libresprite
-    lorien
-    pencil2d
+    # lorien
+    # pencil2d
     pinta
+    # pixelorama
     # END
   ];
 }

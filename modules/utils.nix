@@ -21,28 +21,33 @@
     st
     steam-run
     timer
-    tldr
-    tor
+    # tldr
+    # tor
     unbound
-    vis
-    xev
-    opencode
+    # vis
+    # xev
+    # opencode
     pfetch
     btop
     unrar
     scrcpy
     adbtuifm
     gdtoolkit_4
-    librespot
+    # librespot
     lua
     netcat
-    spotdl
+    # spotdl
     marksman
-    cargo
-    rust-analyzer
+    # cargo
+    # rust-analyzer
     wezterm
     imagemagick
     disfetch
+    lldb
+    gdb
+    # go
+    adwaita-icon-theme
+    ripgrep
     # END
   ];
 }
