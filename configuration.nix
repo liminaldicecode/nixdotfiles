@@ -55,13 +55,23 @@
   };
 
   services.displayManager = {
-    sddm = {
+    gdm = {
       enable = true;
-      wayland.enable = true;
     };
   };
 
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.gnome = {
+    core-apps.enable = true;
+    core-developer-tools.enable = true;
+    games.enable = true;
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
 
   environment.variables.XCURSOR_SIZE = "32";
 
@@ -136,6 +146,7 @@
 
   # Fonts
   fonts.packages = with pkgs; [
+    adwaita-fonts
     jost
     liberation_ttf
     nerd-fonts.jetbrains-mono
@@ -152,7 +163,11 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    alacritty
+    gnome-console
+    qadwaitadecorations
+    qadwaitadecorations-qt6
+    qgnomeplatform
+    qgnomeplatform-qt6
     blender
     git
     gnumake
@@ -188,8 +203,6 @@
       PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
     };
   };
-
-  programs.ssh.startAgent = true;
 
   # System
   system.stateVersion = "26.05";

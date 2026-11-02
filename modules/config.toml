@@ -1,4 +1,4 @@
-theme = "base16_terminal"
+theme = "adwaita-dark"
 
 [editor]
 scrolloff = 999

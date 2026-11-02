@@ -7,19 +7,9 @@
 
 {
   home.packages = with pkgs; [
-    #KDE
     kdePackages.kdeconnect-kde
-    kdePackages.okular
-    kdePackages.kcalc
-    kdePackages.kcharselect
-    kdePackages.kclock
-    kdePackages.kcolorchooser
-    kdePackages.kolourpaint
-    kdePackages.merkuro
     kdePackages.kdevelop
     xdg-desktop-portal-gtk
-    klassy
-    ###
     calibre
     fluent-gtk-theme
     google-chrome

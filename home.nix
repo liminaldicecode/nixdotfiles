@@ -46,8 +46,8 @@
   };
 
   home.pointerCursor = {
-    name = "breeze_cursors";
-    package = pkgs.kdePackages.breeze;
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
     size = 32;
     gtk.enable = true;
     x11.enable = true;
