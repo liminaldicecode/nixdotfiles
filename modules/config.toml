@@ -1,7 +1,7 @@
 theme = "adwaita-dark"
 
 [editor]
-scrolloff = 999
+# scrolloff = 999
 line-number = "relative"
 end-of-line-diagnostics = "hint"
 bufferline = "multiple"
@@ -10,8 +10,8 @@ mouse = true
 [editor.soft-wrap]
 enable = true
 
-[editor.inline-diagnostics]
-cursor-line = "warning"
+# [editor.inline-diagnostics]
+# cursor-line = "warning"
 
 [editor.indent-guides]
 render = true

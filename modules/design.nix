@@ -6,6 +6,8 @@
 
 {
   home.packages = with pkgs; [
+    mypaint
+    drawing
     aseprite
     freecad
     gimp

@@ -1,0 +1,7 @@
+{ ... }:
+{
+  programs.kakoune = {
+    enable = true;
+  };
+
+}

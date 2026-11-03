@@ -93,6 +93,7 @@
       fcitx5-gtk
       qt6Packages.fcitx5-chinese-addons
     ];
+    fcitx5.waylandFrontend = true;
   };
 
   # Audio
@@ -163,7 +164,9 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.appindicator
     gnome-console
+    gnome-terminal
     qadwaitadecorations
     qadwaitadecorations-qt6
     qgnomeplatform

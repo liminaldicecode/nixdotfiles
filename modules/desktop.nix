@@ -1,6 +1,5 @@
 {
   pkgs,
-  zen-browser,
   helium,
   ...
 }:
@@ -31,6 +30,7 @@
     helium
     trackma-gtk
     thunderbird
+    spotify
     #END
   ];
 }
