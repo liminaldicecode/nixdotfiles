@@ -38,6 +38,7 @@
     gdb
     adwaita-icon-theme
     ripgrep
+    fd
     # END
   ];
 }

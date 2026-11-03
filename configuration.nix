@@ -164,7 +164,6 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    kakoune
     gnomeExtensions.appindicator
     gnome-console
     gnome-terminal
