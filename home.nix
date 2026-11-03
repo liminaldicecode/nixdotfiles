@@ -15,7 +15,6 @@
     ./modules/design.nix
     ./modules/utils.nix
     ./modules/helix.nix
-    ./modules/kakoune.nix
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
 
