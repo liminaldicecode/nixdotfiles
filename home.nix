@@ -33,6 +33,7 @@
       			}
       		'';
     shellAliases = {
+      k = "kak";
       code = "codium";
       cls = "clear";
       nix-maintain = "~/bin/nix-maintain";

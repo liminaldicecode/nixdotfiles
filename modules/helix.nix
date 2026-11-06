@@ -6,7 +6,6 @@
     defaultEditor = true;
     extraConfig = "${builtins.readFile ./config.toml}";
     extraPackages = with pkgs; [
-      tmux
       gopls
       nixd
       nixfmt

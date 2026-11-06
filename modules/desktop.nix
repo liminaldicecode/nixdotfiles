@@ -31,6 +31,7 @@
     trackma-gtk
     thunderbird
     spotify
+    f3d
     #END
   ];
 }

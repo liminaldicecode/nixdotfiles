@@ -75,6 +75,9 @@
 
   environment.variables.XCURSOR_SIZE = "32";
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Input
   services.keyd.enable = true;
 
@@ -164,6 +167,12 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    file
+    gnome-boxes
+    kakoune
+    kakoune-lsp
+    gnome-tweaks
+    gnomeExtensions.gsconnect
     gnomeExtensions.appindicator
     gnome-console
     gnome-terminal

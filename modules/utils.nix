@@ -39,6 +39,12 @@
     adwaita-icon-theme
     ripgrep
     fd
+    deno
+    spotdl
+    fzf
+    zellij
+    tmux
+    sbcl
     # END
   ];
 }
