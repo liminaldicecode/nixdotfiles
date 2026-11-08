@@ -37,7 +37,7 @@
       code = "codium";
       cls = "clear";
       nix-maintain = "~/bin/nix-maintain";
-      llm = "GGML_VK_VISIBLE_DEVICES=0 llama-server -m $HOME/models/gemma-4-E4B-it-Q4_K_M.gguf --device Vulkan0 --port 8081 -c 2048 -np 1 -ngl 99";
+      llm = "GGML_VK_VISIBLE_DEVICES=0 llama-server -m $HOME/models/gemma-4-E4B-it-Q4_K_M.gguf --device Vulkan0 --port 8081 -c 34816 -np 1 -ngl 99";
     };
   };
 
@@ -75,6 +75,13 @@
       settings = {
         StartupWMClass = "trackma-gtk";
       };
+    };
+  };
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "gnome-terminal" ];
     };
   };
 
