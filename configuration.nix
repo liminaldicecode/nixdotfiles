@@ -9,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ./maintenance.nix
-    ./modules/kakoune.nix
   ];
 
   # Bootloader
@@ -168,7 +167,6 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    myKakoune
     file
     gnome-boxes
     kakoune

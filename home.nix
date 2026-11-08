@@ -86,7 +86,7 @@
   };
 
   programs.vicinae = {
-    enable = true;
+    enable = false;
   };
 
   home.stateVersion = "26.05";

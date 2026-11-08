@@ -32,6 +32,8 @@
     thunderbird
     spotify
     f3d
+    lmms-full
+    addwater
     #END
   ];
 }
