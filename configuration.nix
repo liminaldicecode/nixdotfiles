@@ -167,38 +167,39 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    blender
     file
+    git
     gnome-boxes
+    gnome-console
+    gnomeExtensions.appindicator
+    gnomeExtensions.gsconnect
+    gnome-terminal
+    gnome-tweaks
+    gnumake
     kakoune
     kakoune-lsp
-    gnome-tweaks
-    gnomeExtensions.gsconnect
-    gnomeExtensions.appindicator
-    gnome-console
-    gnome-terminal
+    libwacom
+    mg
+    nh
+    nixfmt
+    pavucontrol
+    pciutils
     qadwaitadecorations
     qadwaitadecorations-qt6
     qgnomeplatform
     qgnomeplatform-qt6
-    blender
-    git
-    gnumake
-    libwacom
-    mg
-    nixfmt
-    pavucontrol
-    pciutils
     st
     thunar-archive-plugin
     thunar-volman
+    vim-full
     vlc
     webtorrent_desktop
     wget
-    wineWow64Packages.stable
     winetricks
+    wineWow64Packages.stable
     xclip
     yt-dlp
-    nh
     (llama-cpp.override { vulkanSupport = true; })
   ];
 

@@ -2,49 +2,50 @@
 
 {
   home.packages = with pkgs; [
+    adbtuifm
+    adwaita-icon-theme
     age
     appimage-run
     aria2
+    btop
     codex
+    deno
+    disfetch
     exiftool
     fastfetch
+    fd
     flashrom
+    fzf
     gcc
+    gdb
+    gdtoolkit_4
     htop
+    imagemagick
     keyd
     killall
+    lldb
+    lua
+    marksman
+    netcat
     nil
     nixpkgs-fmt
+    nnn
     nodejs
     p7zip
+    pfetch
     ripgrep
+    ripgrep
+    sbcl
+    scrcpy
+    spotdl
     st
     steam-run
     timer
-    unbound
-    pfetch
-    btop
-    unrar
-    scrcpy
-    adbtuifm
-    gdtoolkit_4
-    lua
-    netcat
-    marksman
-    wezterm
-    imagemagick
-    disfetch
-    lldb
-    gdb
-    adwaita-icon-theme
-    ripgrep
-    fd
-    deno
-    spotdl
-    fzf
-    zellij
     tmux
-    sbcl
+    unbound
+    unrar
+    wezterm
+    zellij
     # END
   ];
 }

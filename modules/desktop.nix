@@ -6,34 +6,48 @@
 
 {
   home.packages = with pkgs; [
+    addwater
+    bazaar
+    calibre
+    cozy
+    denaro
+    fluent-gtk-theme
+    fotema
+    gnome-secrets
+    google-chrome
+    gradia
+    handbrake
+    helium
+    ignition
     kdePackages.kdeconnect-kde
     kdePackages.kdevelop
-    xdg-desktop-portal-gtk
-    calibre
-    fluent-gtk-theme
-    google-chrome
-    handbrake
     libreoffice
     librewolf
+    lmms-full
     mpv
-    obs-studio
     obsidian
+    obs-studio
     papirus-icon-theme
+    parabolic
+    pitivi
     qbittorrent
+    shortwave
+    spotify
     stremio-linux-shell
+    switcheroo
     telegram-desktop
+    thunderbird
+    trackma-gtk
     ungoogled-chromium
+    varia
     vesktop
+    video-downloader
+    video-trimmer
     vivaldi
     vscodium-fhs
+    warp
     xarchiver
-    helium
-    trackma-gtk
-    thunderbird
-    spotify
-    f3d
-    lmms-full
-    addwater
+    xdg-desktop-portal-gtk
     #END
   ];
 }

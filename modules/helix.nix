@@ -7,9 +7,9 @@
     extraConfig = "${builtins.readFile ./config.toml}";
     extraPackages = with pkgs; [
       gopls
+      netcat-gnu
       nixd
       nixfmt
-      netcat-gnu
       prettier
     ];
     languages = {

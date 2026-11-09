@@ -6,9 +6,8 @@
 
 {
   home.packages = with pkgs; [
-    mypaint
-    drawing
     aseprite
+    drawing
     freecad
     gimp
     godotPackages_4_7.godot
@@ -17,6 +16,7 @@
     kdePackages.kdenlive
     krita-custom
     libresprite
+    mypaint
     pinta
     # END
   ];
