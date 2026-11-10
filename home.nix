@@ -33,6 +33,7 @@
       			}
       		'';
     shellAliases = {
+      v = "vis";
       n = "nnn";
       k = "kak";
       code = "codium";

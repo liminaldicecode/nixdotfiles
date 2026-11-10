@@ -46,6 +46,7 @@
     vivaldi
     vscodium-fhs
     warp
+    wayscriber
     xarchiver
     xdg-desktop-portal-gtk
     #END

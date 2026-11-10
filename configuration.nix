@@ -192,7 +192,7 @@
     st
     thunar-archive-plugin
     thunar-volman
-    vim-full
+    vis
     vlc
     webtorrent_desktop
     wget
