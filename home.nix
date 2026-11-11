@@ -27,11 +27,14 @@
       			get() {
       				yt-dlp -t mp3 "$1"
                         }
-
       			getvid() {
       				yt-dlp -t mp4 "$1"
       			}
+      			gettrim() {
+      				yt-dlp -o "%(title).100B [%(id).50B].%(ext)s" -t mp3 "$1"
+      			}
       		'';
+
     shellAliases = {
       v = "vis";
       n = "nnn";
@@ -48,15 +51,34 @@
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+  };
+
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;
-    size = 32;
+    size = 36;
     gtk.enable = true;
     x11.enable = true;
   };
 
   xdg.desktopEntries = {
+
+    iotas = {
+      name = "Iotas";
+      exec = "iotas";
+      genericName = "Note Taking App";
+      comment = "Iotas aims to provide distraction-free note taking via its mobile-first design.";
+      terminal = false;
+      icon = "/home/nix/.applications/iotas.svg";
+      noDisplay = false;
+    };
 
     codium = {
       name = "VSCodium";

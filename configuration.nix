@@ -9,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ./maintenance.nix
+    ./modules/misc-usr-fix.nix
   ];
 
   # Bootloader
@@ -170,6 +171,7 @@
     blender
     file
     git
+    adw-gtk3
     gnome-boxes
     gnome-console
     gnomeExtensions.appindicator

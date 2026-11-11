@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    glib
     adbtuifm
     adwaita-icon-theme
     age
@@ -14,6 +15,7 @@
     exiftool
     fastfetch
     fd
+    ffmpeg-full
     flashrom
     fzf
     gcc
@@ -46,6 +48,6 @@
     unrar
     wezterm
     zellij
-    # END
+    zenity
   ];
 }

@@ -6,17 +6,19 @@
 
 {
   home.packages = with pkgs; [
+    gram
     addwater
     bazaar
     calibre
     cozy
     denaro
     fluent-gtk-theme
+    foliate
+    folio
     fotema
     gnome-secrets
     google-chrome
     gradia
-    handbrake
     helium
     ignition
     kdePackages.kdeconnect-kde
@@ -33,7 +35,6 @@
     qbittorrent
     shortwave
     spotify
-    stremio-linux-shell
     switcheroo
     telegram-desktop
     thunderbird
