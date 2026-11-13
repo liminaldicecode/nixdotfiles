@@ -25,7 +25,7 @@
     initExtra = ''
       bind "set completion-ignore-case on"
       			get() {
-      				yt-dlp -t mp3 "$1"
+      				yt-dlp -S ext:m4a -x --embed-thumbnail "$1"
                         }
       			getvid() {
       				yt-dlp -t mp4 "$1"

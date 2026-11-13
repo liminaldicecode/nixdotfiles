@@ -6,6 +6,7 @@
 
 {
   home.packages = with pkgs; [
+    penpot-desktop
     gram
     addwater
     bazaar

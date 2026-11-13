@@ -205,6 +205,10 @@
     (llama-cpp.override { vulkanSupport = true; })
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-42.11.18"
+  ];
+
   # SSH
   services.openssh = {
     enable = true;
