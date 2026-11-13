@@ -77,6 +77,7 @@
   environment.variables.XCURSOR_SIZE = "32";
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
   programs.virt-manager.enable = true;
 
   # Input
@@ -114,7 +115,10 @@
   # Users
   users.users.nix = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
       tree
     ];

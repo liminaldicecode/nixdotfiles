@@ -2,6 +2,10 @@
 
 {
   home.packages = with pkgs; [
+    openssl
+    docker
+    docker-compose
+    micro-full
     glib
     adbtuifm
     adwaita-icon-theme
