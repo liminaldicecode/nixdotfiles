@@ -42,7 +42,6 @@
                 krita-custom = krita-custom.legacyPackages.${system}.krita;
                 helium = helium.packages.${pkgs.stdenv.hostPlatform.system}.default;
               };
-
             };
           }
         ];

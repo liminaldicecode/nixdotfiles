@@ -5,20 +5,6 @@
   ...
 }:
 
-let
-  unstable =
-    import
-      (builtins.fetchGit {
-        name = "nixos-unstable-2026";
-        url = "https://github.com/nixos/nixpkgs/";
-        ref = "refs/heads/nixos-unstable";
-        rev = "d4f25a3e562008648d45bcf2d70bcc7422cad84e";
-      })
-      {
-        config = config.nixpkgs.config;
-        system = pkgs.stdenv.hostPlatform.system;
-      };
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -207,9 +193,6 @@ in
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    (writeShellScriptBin "blender-unstable" ''
-      exec ${unstable.blender}/bin/blender "$@"
-    '')
     blender
     file
     git
