@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     openssl
+    kicad
     docker
     docker-compose
     micro-full

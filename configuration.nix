@@ -5,6 +5,20 @@
   ...
 }:
 
+let
+  unstable =
+    import
+      (builtins.fetchGit {
+        name = "nixos-unstable-2026";
+        url = "https://github.com/nixos/nixpkgs/";
+        ref = "refs/heads/nixos-unstable";
+        rev = "d4f25a3e562008648d45bcf2d70bcc7422cad84e";
+      })
+      {
+        config = config.nixpkgs.config;
+        system = pkgs.stdenv.hostPlatform.system;
+      };
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -97,6 +111,7 @@
       fcitx5-mozc
       fcitx5-gtk
       qt6Packages.fcitx5-chinese-addons
+      fcitx5-mcbopomofo
     ];
     fcitx5.waylandFrontend = true;
   };
@@ -154,24 +169,47 @@
   services.qbittorrent.enable = true;
 
   # Fonts
-  fonts.packages = with pkgs; [
-    adwaita-fonts
-    jost
-    liberation_ttf
-    nerd-fonts.jetbrains-mono
-    noto-fonts-cjk-sans
-    nerd-fonts.caskaydia-cove
-    iosevka
-    iosevka-comfy.comfy
-    roboto
-    hermit
-    plemoljp
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      eb-garamond
+      babelstone-han
+      adwaita-fonts
+      jost
+      liberation_ttf
+      nerd-fonts.jetbrains-mono
+      noto-fonts-cjk-sans
+      nerd-fonts.caskaydia-cove
+      iosevka
+      iosevka-comfy.comfy
+      roboto
+      hermit
+      plemoljp
+    ];
 
-  fonts.fontDir.enable = true;
+    fontconfig = {
+      defaultFonts = {
+        serif = [
+          "EB Garamond"
+          "Noto Serif CJK SC"
+        ];
+        sansSerif = [
+          "Inter"
+          "Noto Sans CJK SC"
+        ];
+        monospace = [
+          "CaskaydiaCove Nerd Font Mono"
+          "Ubuntu Mono"
+        ];
+      };
+    };
+  };
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    (writeShellScriptBin "blender-unstable" ''
+      exec ${unstable.blender}/bin/blender "$@"
+    '')
     blender
     file
     git

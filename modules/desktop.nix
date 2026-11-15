@@ -6,6 +6,7 @@
 
 {
   home.packages = with pkgs; [
+    anki
     penpot-desktop
     gram
     addwater

@@ -14,6 +14,7 @@
     ./modules/desktop.nix
     ./modules/design.nix
     ./modules/utils.nix
+    ./modules/emacs.nix
     ./modules/helix.nix
   ]
   ++ lib.optional (builtins.pathExists ./modules/git.nix) ./modules/git.nix;
@@ -36,6 +37,7 @@
       		'';
 
     shellAliases = {
+      em = "emacs -nw";
       v = "vis";
       n = "nnn";
       k = "kak";
