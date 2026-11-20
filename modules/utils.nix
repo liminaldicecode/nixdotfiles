@@ -2,12 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    openssl
-    kicad
-    docker
-    docker-compose
-    micro-full
-    glib
     adbtuifm
     adwaita-icon-theme
     age
@@ -17,6 +11,8 @@
     codex
     deno
     disfetch
+    docker
+    docker-compose
     exiftool
     fastfetch
     fd
@@ -26,18 +22,23 @@
     gcc
     gdb
     gdtoolkit_4
+    glib
     htop
     imagemagick
     keyd
+    kicad
     killall
     lldb
     lua
     marksman
+    megabasterd
+    micro-full
     netcat
     nil
     nixpkgs-fmt
     nnn
     nodejs
+    openssl
     p7zip
     pfetch
     ripgrep
@@ -51,8 +52,10 @@
     tmux
     unbound
     unrar
+    vlc-bittorrent
     wezterm
     zellij
+    ddcutil
     zenity
   ];
 }

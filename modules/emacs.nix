@@ -6,19 +6,9 @@
     package = pkgs.emacs-gtk;
     extraPackages =
       epkgs: with epkgs; [
-        undo-tree
-        undo-fu
-        goto-chg
-        evil
-        evil-numbers
-        evil-collection
-        evil-surround
-        evil-commentary
-        evil-multiedit
-        adwaita-dark-theme
         company
-        doom-modeline
-        doom-themes
+        magit
+        eglot
         flycheck
         gdscript-mode
         hydra

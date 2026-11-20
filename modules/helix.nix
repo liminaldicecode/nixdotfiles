@@ -3,7 +3,7 @@
 {
   programs.helix = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
     extraConfig = "${builtins.readFile ./config.toml}";
     extraPackages = with pkgs; [
       gopls

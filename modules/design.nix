@@ -11,6 +11,7 @@
     freecad
     gimp
     godotPackages_4_7.godot
+    godot_4_7-mono
     gpick
     inkscape
     kdePackages.kdenlive

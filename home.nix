@@ -48,20 +48,24 @@
     };
   };
 
-  dconf = {
-    enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
-
+  
   gtk = {
     enable = true;
-    colorScheme = "dark";
+    colorScheme = "light";
     theme = {
-      name = "adw-gtk3-dark";
+      name = "adw-gtk3";
       package = pkgs.adw-gtk3;
     };
   };
 
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-light";
+      };
+    };
+  };
+  
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;
@@ -71,6 +75,24 @@
   };
 
   xdg.desktopEntries = {
+
+    "godot4.7" = {
+      name = "Godot AMD";
+      exec = ''env VK_LOADER_DRIVERS_SELECT="*radeon*" godot4.7 %f'';
+      genericName = "Game Engine";
+      comment = "Launch Godot forced on AMD iGPU";
+      terminal = false;
+      icon = "godot";
+    };
+
+    "godot4.7-mono" = {
+      name = "Godot Mono";
+      exec = ''env VK_LOADER_DRIVERS_SELECT="*radeon*" godot4.7-mono%f'';
+      genericName = "Game Engine";
+      comment = "Launch Godot forced on AMD iGPU";
+      terminal = false;
+      icon = "godot";
+    };
 
     iotas = {
       name = "Iotas";
@@ -88,7 +110,7 @@
       genericName = "Code Editor";
       comment = "Code Editing. Redefined.";
       terminal = false;
-      icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
+      # icon = "/home/nix/.applications/VSCodium_new_dark_512x512.svg";
     };
 
     trackma-gtk = {

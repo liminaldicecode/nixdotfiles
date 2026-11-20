@@ -27,6 +27,11 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 59100 ];
+  };
+
   # Syncthing
   services.syncthing = {
     enable = true;
@@ -71,7 +76,7 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    style = "adwaita-dark";
+    style = "adwaita";
   };
 
   environment.variables.XCURSOR_SIZE = "32";
@@ -80,6 +85,17 @@
   virtualisation.docker.enable = true;
   programs.virt-manager.enable = true;
 
+  # dconf
+  programs.dconf = {
+    enable = true;
+  };
+
+  # Emacs
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+  };
+  
   # Input
   services.keyd.enable = true;
 
@@ -158,9 +174,13 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      cantarell-fonts
+      nerd-fonts.adwaita-mono
+      nerd-fonts.fira-code
       eb-garamond
       babelstone-han
       adwaita-fonts
+      source-serif
       jost
       liberation_ttf
       nerd-fonts.jetbrains-mono
@@ -180,12 +200,12 @@
           "Noto Serif CJK SC"
         ];
         sansSerif = [
-          "Inter"
+          "Adwaita Sans"
           "Noto Sans CJK SC"
         ];
         monospace = [
-          "CaskaydiaCove Nerd Font Mono"
-          "Ubuntu Mono"
+          "AdwaitaMono Nerd Font Mono"
+          "Liberation Mono"
         ];
       };
     };
