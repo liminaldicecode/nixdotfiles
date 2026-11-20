@@ -7,14 +7,16 @@
     extraPackages =
       epkgs: with epkgs; [
         company
-        magit
+        doom-modeline
         eglot
         flycheck
         gdscript-mode
         hydra
         lsp-mode
         lsp-ui
+        magit
         markdown-mode
+        meow
         multiple-cursors
         nix-mode
         vterm
