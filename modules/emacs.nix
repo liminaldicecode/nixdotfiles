@@ -8,15 +8,16 @@
       epkgs: with epkgs; [
         company
         doom-modeline
+        good-scroll
         eglot
         flycheck
         gdscript-mode
+        gdshader-mode
         hydra
         lsp-mode
         lsp-ui
         magit
         markdown-mode
-        meow
         multiple-cursors
         nix-mode
         vterm

@@ -43,17 +43,16 @@
       k = "kak";
       code = "codium";
       cls = "clear";
-      nix-maintain = "~/bin/nix-maintain";
-      llm = "GGML_VK_VISIBLE_DEVICES=0 llama-server -m $HOME/models/gemma-4-E4B-it-Q4_K_M.gguf --device Vulkan0 --port 8081 -c 34816 -np 1 -ngl 99";
+      llm = "GGML_VK_VISIBLE_DEVICES=0 llama-server -m $HOME/Models/gemma-4-E4B-it-Q4_K_M.gguf --device Vulkan0 --port 8081 -c 34816 -np 1 -ngl 99";
     };
   };
 
   
   gtk = {
     enable = true;
-    colorScheme = "light";
+    colorScheme = "dark";
     theme = {
-      name = "adw-gtk3";
+      name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
   };
@@ -61,7 +60,7 @@
   dconf = {
     settings = {
       "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-light";
+        color-scheme = "prefer-dark";
       };
     };
   };
@@ -75,6 +74,13 @@
   };
 
   xdg.desktopEntries = {
+
+    "mesh2motion" = {
+      name = "Mesh 2 Motion";
+      exec = "appimage-run /home/nix/.applications/Mesh2Motion_0.1.10_amd64.AppImage";
+      comment = "3D animation library and auto-rigging tool for web and game engines.";
+      terminal = false;
+    };
 
     "godot4.7" = {
       name = "Godot AMD";
@@ -129,7 +135,7 @@
   xdg.terminal-exec = {
     enable = true;
     settings = {
-      default = [ "gnome-terminal" ];
+      default = [ "gnome-console" ];
     };
   };
 
